@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { MovieService } from '../../services/movie-service';
+
 @Component({
   imports: [FontAwesomeModule],
   selector: 'app-search-bar',
@@ -8,5 +10,11 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './search-bar.html',
 })
 export class SearchBar {
-  faMagnifyingGlass = faMagnifyingGlass;
+  protected readonly faMagnifyingGlass = faMagnifyingGlass;
+  private readonly movieService = inject(MovieService);
+
+  getMovieByTitle(title: string) {
+    this.movieService.filterMovies(title);
+  }
 }
+
