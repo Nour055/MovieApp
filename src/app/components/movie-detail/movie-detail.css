@@ -5,7 +5,7 @@
   align-items: stretch;
   gap: 20px;
   padding: 20px;
-  min-height: 100vh;
+  min-height: 78vh;
   box-sizing: border-box;
   background: linear-gradient(180deg, #2a0220 0%, #3d032c 100%);
 }
